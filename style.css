@@ -1,0 +1,119 @@
+/* Apply a gradient animated background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Centered Glassmorphic Container */
+.todo-container {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 30px;
+  width: 350px;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.2s ease-in-out;
+}
+
+.todo-container:hover {
+  transform: scale(1.01);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Input and Button Section */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+#addTaskBtn {
+  padding: 10px 15px;
+  background-color: #00c9a7;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+#addTaskBtn:hover {
+  background-color: #00b59c;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Task Item Styles */
+.task-item {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #d3d3d3;
+}
+
+.task-item span {
+  cursor: pointer;
+  flex: 1;
+}
+
+/* Remove Button */
+.remove-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.remove-btn:hover {
+  background-color: #e04343;
+}
